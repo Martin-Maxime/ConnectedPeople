@@ -1,0 +1,30 @@
+<head>
+  <title>Connected People</title>
+</head>
+
+<body>  
+  <h1>Chatapp</h1>
+  {{> atForm}}
+  {{> loginButtons}}
+  {{#if currentUser}}
+    {{> welcome }}
+    {{> input }}
+    {{> messages }}
+  {{/if}}
+</body>
+
+<template name="welcome">
+  <p>
+    Let's chat.
+  </p>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    <strong>{{name}}:</strong> {{message}}<br>
+  {{/each}}
+</template>
+
+<template name="input">
+  <p>Message: <input type="text" id="message"></p>
+</template>
